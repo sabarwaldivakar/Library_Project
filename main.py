@@ -53,10 +53,13 @@ while True:
             name = input("Enter Name: ").strip()
             if not name.replace(" ", "").isalpha():
                 raise ValueError
-        except:
-            print ("Name must be only alphabets")
-        email = input("Enter Email: ").strip()
-
+            email = input("Enter Email: ").strip()
+            if "@" not in email:
+                raise ValueError 
+        except ValueError:
+            print ("Invalid Name or Email.")
+            continue  
+          
         member = Member(member_id, name, email)
         library.add_member(member)
 
