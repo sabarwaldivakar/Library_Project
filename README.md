@@ -35,7 +35,6 @@ STRUCTURE
 * Loans.csv - Loans storage File
 
 TECHNOLOGY USED 
-
 * Python 3
 * CSV File Storage
 * Object-Oriented Programming (OOP)
@@ -46,7 +45,9 @@ HOW TO RUN
 3. Use the options from the main menu to perform any task.
 
 SAMPLE DATA 
+
 The file already contains some sample data for books members and loans to demonstrate the functioning of the system
 
 AUTHOR
+
 DIVAKAR SABARWAL
