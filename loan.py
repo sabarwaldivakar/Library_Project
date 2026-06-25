@@ -1,4 +1,5 @@
 class Loan :
+    """Represents a borrowing transaction between a member and a book."""
     def __init__(self, loan_id, member_id, book_id, loan_date, return_date = None):
         self.loan_id = loan_id
         self.member_id = member_id
@@ -21,4 +22,9 @@ class Loan :
         self.return_date = return_date
 
     def is_active(self):
-        return self.return_date is None    
+        return self.return_date is None
+    
+    def get_status(self):
+        if self.is_active ():
+            return "Active"
+        return "Returned"
