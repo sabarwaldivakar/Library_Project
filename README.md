@@ -33,3 +33,20 @@ STRUCTURE
 * books.csv - Books storage file
 * members.csv - Storag File for Members
 * Loans.csv - Loans storage File
+
+TECHNOLOGY USED 
+
+* Python 3
+* CSV File Storage
+* Object-Oriented Programming (OOP)
+
+HOW TO RUN 
+1. Open the Project Folder
+2. Run the main.py
+3. Use the options from the main menu to perform any task.
+
+SAMPLE DATA 
+The file already contains some sample data for books members and loans to demonstrate the functioning of the system
+
+AUTHOR
+DIVAKAR SABARWAL
