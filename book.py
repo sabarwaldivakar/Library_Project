@@ -1,4 +1,6 @@
 class Book :
+    """Represents a book with details and borrowing status."""
+
     def __init__ (self, book_id, title, author, year):
         self.book_id = book_id
         self.title = title

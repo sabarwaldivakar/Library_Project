@@ -1,4 +1,6 @@
 class Member:
+    """Represents a library member and their borrowed books."""
+    
     def __init__(self, member_id, name, email):
         self.member_id = member_id
         self.name = name

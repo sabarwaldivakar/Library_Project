@@ -2,6 +2,7 @@ from datetime import date
 from loan import Loan
 
 class Library:
+    """Manages books, members, loans, and library operations."""
     def __init__(self, name):
         self.name = name
         self.books = []

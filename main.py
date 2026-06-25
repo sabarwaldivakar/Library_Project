@@ -10,10 +10,12 @@ save_members,
 save_loans,)
 
 library = Library("City Library")
-
+# Load saved data from CSV files when the program starts
 library.books=load_books()
 library.members=load_members()
 library.loans=load_loans()
+
+# Rebuild borrowed book lists from active loans
 for loan in library.loans:
     if loan.is_active():
         for member in library.members:
@@ -64,15 +66,31 @@ while True:
         library.add_member(member)
 
     elif choice == "3":
-        member_id = input("Enter Member ID: ").strip()
-        book_id = input("Enter Book ID: ").strip()
+        try :  
+            member_id = input("Enter Member ID: ").strip()
+            book_id = input("Enter Book ID: ").strip()
+            if not member_id or not book_id: 
+                raise ValueError
+            
+            library.borrow_book(member_id, book_id)
 
-        library.borrow_book(member_id, book_id)
+        except ValueError:
+           print("Member ID or Book ID cannot be empty")
+           continue
+       
+        
     elif choice == "4":
-         member_id = input("Enter Member ID: ").strip()
-         book_id = input ("Enter Book ID: ").strip()
+        try:
+            member_id = input("Enter Member ID: ").strip()
+            book_id = input ("Enter Book ID: ").strip()
+            if not member_id or not book_id:
+                raise ValueError
+            
+            library.return_book(member_id, book_id)
 
-         library.return_book(member_id, book_id)
+        except ValueError:
+            print ("Member_id or Book_id cannot be empty" )
+            continue
 
     elif choice == "5":
         library.display_books()
@@ -81,6 +99,7 @@ while True:
     elif choice == "7":
         library.display_loans()
     elif choice == "8":
+# Save all data before closing the program
         save_books(library.books)
         save_members(library.members)
         save_loans(library.loans) 
@@ -89,6 +108,4 @@ while True:
         break
 
     else:
-        print("Invalid choice. Please try again.")
-        
-
+        print("Invalid choice. Please try again.") 
